@@ -1,14 +1,14 @@
 global:
   postgresql:
     auth:
-      postgresPassword: "$CHANGEME1"
+      postgresPassword: "changeme"
       username: "keycloak"
-      password: "$CHANGEME2"
+      password: "changeme"
       database: "keycloak"
 keycloak:
   auth:
     adminUser: keycloak
-    adminPassword: $CHANGEME3
+    adminPassword: changeme
   production: true
   tls: 
     enabled: false 
@@ -45,17 +45,17 @@ keycloak:
       ## See https://www.ibm.com/support/pages/502-error-ingress-keycloak-response
       nginx.ingress.kubernetes.io/proxy-buffer-size: 128k
     # List of rules for the Ingress
-    hostname: "auth.lab.$DOMAIN"
+    hostname: "auth.lab.lab.192-168-0-17.nip.io"
     # TLS configuration
     extraTls:
       - hosts:
-         - auth.lab.$DOMAIN
+         - auth.lab.lab.192-168-0-17.nip.io
   
   extraStartupArgs: "--features=preview --log-level=org.keycloak.events:debug"
 
   extraEnvVars: 
     - name: ONYXIA_RESOURCES_ALLOWED_ORIGINS
-      value: "https://datalab.$DOMAIN, http://localhost, http://127.0.0.1"
+      value: "https://datalab.lab.192-168-0-17.nip.io, http://localhost, http://127.0.0.1"
 
   initContainers: |
     - name: realm-ext-provider
@@ -83,5 +83,5 @@ keycloak:
     host: keycloakv3-postgresql
     port: 5432
     user: keycloak
-    password: $CHANGEME2
+    password: changeme
     database: keycloak
