@@ -14,19 +14,19 @@ onyxia:
       #      fr: "Une annonce **importante**! [Regardez](https://example.com)!"
       #    }
       #  }
-  catalogs:
-    [
-      {
-        "id": "inseefrlab-helm-charts-datascience",
-        "name": "Inseefrlab datascience",
-        "description": "Services for datascientists. https://github.com/InseeFrLab/helm-charts-datascience",
-        "maintainer": "innovation@insee.fr",
-        "location": "https://inseefrlab.github.io/helm-charts-datascience",
-        "status": "PROD",
-        "type": "helm",
-      }
-    ]
+
   api:
+    catalogs: [
+        {
+          "id": "inseefrlab-helm-charts-datascience",
+          "name": "Inseefrlab datascience",
+          "description": "Services for datascientists. https://github.com/InseeFrLab/helm-charts-datascience",
+          "maintainer": "innovation@insee.fr",
+          "location": "https://inseefrlab.github.io/helm-charts-datascience",
+          "status": "PROD",
+          "type": "helm",
+        }
+      ]
     regions: [
       {
         id: "my-region",
